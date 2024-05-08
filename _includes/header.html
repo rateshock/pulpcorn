@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="Piccolo America">
+    <meta name="application-name" content="Piccolo America">
+    <title>{% capture title_text -%}
+        {% if page.url == "/" %}
+          {{ site.title }} - Cinema per le persone
+        {% else %}
+          {% if page.title %}
+            {{ page.title }} | {{ site.title }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        {% endif %}
+      {%- endcapture -%}{{ title_text | strip_newlines | strip }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%Y%m%d%H%M%S' }}" type="text/css" media="screen, print" fetchpriority="high">
+    {% if page.style %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.style }}?v={{ 'now' | date: '%Y%m%d%H%M%S' }}" type="text/css" media="screen, print" fetchpriority="high">
+    {% endif %}
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@PiccoloAmerica">
+    <meta property="og:title" content="Piccolo America">
+    <meta property="og:description"
+        content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="https://piccoloamerica.it/wp-content/uploads/2019/06/piccolo-america.png">
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
+
+    <script type="application/ld+json">
+
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Fondazione Piccolo America",
+      "alternateName": "Piccolo America",
+      "url": "https://piccoloamerica.it",
+      "logo": "https://piccoloamerica.it/wp-content/uploads/2020/04/picolo-america-logo.svg",
+      "sameAs": [
+        "https://twitter.com/PiccoloAmerica",
+        "https://www.facebook.com/piccoloamerica",
+        "https://www.instagram.com/piccoloamerica",
+        "https://piccoloamerica.it"
+      ]
+    }
+
+</script>
+</head>
+
+<body>
+
+  <header>
+    <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+    <nav>
+      <div class="logo">
+        <a href="/" aria-label="Home"><img src="{{ site.baseurl }}/assets/img/logo.svg" loading="lazy" alt></a>
+      </div>
+      <label for="hamburger-toggle" class="hamburger-icon">☰</label>
+      <div class="menu">
+        <a href="{{ site.baseurl }}/about">About us</a>
+        <a href="{{ site.baseurl }}/progetti">Progetti</a>
+        <a href="{{ site.baseurl }}/community">Community</a>
+        <a href="{{ site.baseurl }}/parlano-di-noi">Parlano di noi</a>
+        <a href="{{ site.baseurl }}/sostienici">Sostienici</a>
+      </div>
+    </nav>
+  </header>
