@@ -1,0 +1,140 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prima Rubrica</title>
+</head>
+<style>
+  .snap-container{
+    height: 100%;
+    margin: 0;
+    scroll-snap-type: y mandatory; /* Attiva lo scroll snap verticale */
+    overflow-y: scroll; /* Assicura che lo scroll sia sempre attivo */
+}
+
+section {
+    height: 100vh;
+    display: flex; /* Imposta il container come flex */
+    align-items: center; /* Allinea i figli verticalmente al centro */
+    justify-content: center; /* Allinea i figli orizzontalmente al centro */
+    flex-direction: column; /* Organizza i figli in colonna */
+    padding: 20px; /* Aggiunge padding per evitare che il contenuto tocchi i bordi */
+}
+
+.img-parallax-sfondo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* Assicura che l'immagine copra l'intera sezione */
+    background-position: center; /* Centra l'immagine di sfondo */
+}
+
+.img-apertura-sfondo {
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Altezza fissa per vedere l'effetto parallasse */
+}
+
+.img-apertura-sfondo img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s ease-out; /* Per un effetto più fluido */
+}
+
+.img-apertura-sfondo h1 {
+    position: absolute;
+    top: 50%;  /* Centra verticalmente */
+    left: 50%;  /* Centra orizzontalmente */
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 10;
+    text-align: center;
+}
+
+</style>
+
+<body>
+    <div class="non-snap-container">
+        <div class="img-apertura-sfondo">
+            <img src="{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/zama-bg-01.webp">
+            <h1>Quattro film per conoscere Lucrecia Martel</h1>
+        </div>
+        <div class="container-base">
+            <p>Amata dai cinefili ma sconosciuta al grande pubblico, la scelta di avere <strong>Lucrecia Martel</strong>come presidente di giuria del Concorso della <strong>76. Mostra del Cinema di Venezia</strong> è stata la prima vera grande sorpresa di quest'edizione.</p>
+            <p>La regista argentina ha all'attivo numerosi cortometraggi, quattro documentari e quattro lungometraggi di finzione, l'ultimo dei quali è stato presentato Fuori Concorso proprio a Venezia nel 2017.</p>
+            <p>Per non arrivare alla Mostra impreparati, ma anche per (ri)scoprire una delle voci più interessanti nel panorama cinematografico contemporaneo, vi presentiamo i suoi quattro film.</p>
+            <br>
+        </div>
+    </div>
+    <div class="snap-container">
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-01.jpeg');">
+        <h2 style="color: white;"><em>La ciénaga</em> (2001)</h2>
+    </section>
+    
+    <section class="container-base">
+       <div class="titolo-film"> <h2 style="color: var(--pulpcorn);"><em>La ciénaga</em> (2001)</h2></div>
+
+        <p>L'opera prima di Martel ci porta nelle Ande, dove una famiglia benestante sta trascorrendo le vacanze estive in una villa con piscina. La palude (ciénaga) del titolo non è solo letterale - la villa si trova proprio accanto alla riserva naturale argentina così denominata - ma rappresenta l'atmosfera che avvolge i protagonisti, impantanati in un susseguirsi di noia e indifferenza di moraviana memoria.</p>
+        <p>Appare già chiara la cifra stilistica di Martel, che usa inquadrature lunghe e fisse per trasmettere l'immobilità delle situazioni e, nonostante la quasi totale assenza di intreccio, riesce a ipnotizzare lo spettatore e firma uno degli incipit più folgoranti e memorabili del cinema del nuovo millennio.</p>
+    </section>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-02.jpeg');">
+        <h2 style="color: white;"><em>La niña santa</em> (2004)</h2>
+    </section>
+    
+    <section class="container-base">
+        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">La niña santa (2001)</h2></div>
+        <p>Anche nel secondo film della regista argentina, prodotto da<strong> Pedro Almodóvar</strong>, c'è una predilizione per gli spazi chiusi e le piscine, anche se in questo caso si tratta di quelli di un hotel di Salta (città natale di Martel) dove si svolge un congresso medico. La sedicenne Amalia, figlia della gestore dell'albergo e fervente cattolica, decide di voler salvare l'anima di un uomo di mezza età che si mostra attratto da lei.</p>
+        <p>Lo sguardo enigmatico e ipnotico di Amalia si fissa sullo schermo in quest'opera fatta di silenzi, preghiere, sussurri e non-detti, senza che la tensione venga mai sciolta definitivamente. Uno sguardo originale e potente sull'adolescenza, sulla nascita del desiderio e sull'intimità dell'amicizia femminile.</p>
+     </section>
+
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-03.jpeg');">
+        <h2 style="color: white;"><em>La mujer sin cabeza</em> (2008)</h2>
+    </section>
+    
+    <section class="container-base">
+        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">La mujer sin cabeza (2008)</h2></div>
+
+        <p>Considerato il capolavoro di Martel, è sicuramente il suo film di maggior successo. La lenta discesa nell'abisso della paranoia di una donna è il soggetto perfetto per lo stile, ormai affermato, della regista: le inquadrature fisse, i primissimi piani e le lunghe sequenze scandiscono l'incessante scorrere del tempo che provoca angoscia nella protagonista così come nello spettatore.</p>
+        <p>A metà fra un thriller psicologico e una farsa da teatro dell'assurdo, il fascino di quest'opera risiede nella sceneggiatura criptica dal corrosivo sottotesto politico ma che si presta a diverse chiavi di lettura.</p>
+  </section>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-04.jpeg');">
+        <h2 style="color: white;"><em>Zama</em> (2016)</h2>
+    </section>
+    
+    <section class="container-base">
+        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">Zama (2016)</h2></div>
+
+        <p style="text-align: justify;">Presentato fuori concorso alla <strong>74. Mostra del Cinema di Venezia</strong> (dopo aver bypassato il concorso di Cannes per un conflitto d'interessi: il produttore Almodóvar era all'epoca presidente di giuria), è il film più ambizioso e visionario della regista argentina, che da sfogo al suo estro concedendosi parecchi virtuosismi, aiutata dai tre milioni di dollari di budget che si vedono tutti nella sountuosa messa in scena, con fotografia, costumi e scenografia che si addicono a una grande produzione.</p>
+        <p style="text-align: justify;">Tratto dall'omonimo romanzo storico di <strong>Antonio di Benedetto</strong>, il film narra la storia dell'ufficiale Don Diego de Zama, confinato in una colonia sudamericana per volere della Corona Spagnola e in attesa di promozione. L'ambientazione storica è solo un pretesto per trattare, ancora una volta, i temi cari a Martel: la noia della borghesia de <em>La ciènaga</em> qui diventa quella dei colonizzatori, e l'estenuante attesa di un cambiamento della propria situazione esistenziale qui spingerà il protagonista ad un'ultima disperata impresa.</p>
+    </section>
+</div>  
+</body>
+<script>document.addEventListener('DOMContentLoaded', function() {
+    const snapContainer = document.querySelector('.snap-container');
+    let isSnapped = false; // Flag per evitare scatti multipli
+
+    window.addEventListener('scroll', () => {
+        const triggerHeight = window.innerHeight / 2; // Punto trigger a metà dello schermo
+        const snapRect = snapContainer.getBoundingClientRect();
+
+        // Controlla se la parte superiore del snap container è visibile e più della metà della pagina è stata superata
+        if (snapRect.top < triggerHeight && !isSnapped) {
+            isSnapped = true; // Imposta il flag per evitare scatti successivi
+            // Scrolla verso l'inizio del snap container
+            window.scrollTo({
+                top: snapContainer.offsetTop,
+                behavior: 'smooth' // Effetto di scroll morbido
+            });
+        }
+    });
+});
+</script>
+
+</html>

@@ -2,52 +2,57 @@
 <html lang="it">
 
 <head>
-    <meta name="robots" content="noindex">
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-title" content="Piccolo America">
-    <meta name="application-name" content="Piccolo America">
-    <title>{% capture title_text -%}
-        {% if page.url == "/" %}
-          {{ site.title }} - Il cinema raccontato da chi lo ama
-        {% else %}
-          {% if page.title %}
-            {{ page.title }} | {{ site.title }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        {% endif %}
-      {%- endcapture -%}{{ title_text | strip_newlines | strip }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%Y%m%d%H%M%S' }}" type="text/css" media="screen, print" fetchpriority="high">
-    {% if page.style %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.style }}?v={{ 'now' | date: '%Y%m%d%H%M%S' }}" type="text/css" media="screen, print" fetchpriority="high">
+  <meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-title" content="Piccolo America">
+  <meta name="application-name" content="Piccolo America">
+  <title>{% capture title_text -%}
+    {% if page.url == "/" %}
+    {{ site.title }} - Il cinema raccontato da chi lo ama
+    {% else %}
+    {% if page.title %}
+    {{ page.title }} | {{ site.title }}
+    {% else %}
+    {{ site.title }}
     {% endif %}
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <meta name="twitter:card" content="summary">
-    <meta property="og:title" content="Pulpcorn.com">
-    <meta property="og:description"
-        content="{{ page.description | default: site.description }}">
-    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
+    {% endif %}
+    {%- endcapture -%}{{ title_text | strip_newlines | strip }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%Y%m%d%H%M%S' }}"
+    type="text/css" media="screen, print" fetchpriority="high">
+  {% if page.style %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.style }}?v={{ 'now' | date: '%Y%m%d%H%M%S' }}"
+    type="text/css" media="screen, print" fetchpriority="high">
+  {% endif %}
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:title" content="Pulpcorn.com">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="{{ site.baseurl }}/site.webmanifest">
 
-   
+
 </head>
 
 <body>
 
   <header>
     <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
-    <nav>
+    <div class="header-top">
       <div class="logo">
         <a href="/" aria-label="Home"><img src="{{ site.baseurl }}/assets/img/logo.png" loading="lazy" alt></a>
       </div>
-      <label for="hamburger-toggle" class="hamburger-icon">☰</label>
-      <div class="menu">
-        <a href="{{ site.baseurl }}/chi-siamo">Chi Siamo</a>
-        <a href="{{ site.baseurl }}/recensioni">Recensioni</a>
-        <a href="{{ site.baseurl }}/rubriche">Rubriche</a>
-      </div>
+    </div>
+    <div class="header-bottom">
+      <nav>
+       <!-- <label for="hamburger-toggle" class="hamburger-icon">☰</label>-->
+        <div class="menu">
+          <a href="{{ site.baseurl }}/chi-siamo">Chi Siamo</a>
+          <a href="{{ site.baseurl }}/recensioni">Recensioni</a>
+          <a href="{{ site.baseurl }}/rubriche">Rubriche</a>
+        </div>
+    </div>
     </nav>
   </header>

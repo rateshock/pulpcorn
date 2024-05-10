@@ -26,7 +26,11 @@ url: "https://beta.pulpcorn.com" # the base hostname & protocol for your site, e
 # twitter_username: piccoloamerica
 
 # Build settings
-
+collections:
+  rubriche:
+    output: true
+    permalink: /rubriche/:name/
+    
 plugins:
   - jekyll-feed
 
