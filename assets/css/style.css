@@ -264,7 +264,21 @@ footer .social p::before {
 #hamburger-toggle:checked+nav {
   mix-blend-mode: normal;
 }
+.autore img {
+  width: 100px;
+  border-radius: 100%;
+}
 
+.autore {
+  text-align: center;
+  padding: 20px;
+}
+hr {
+  width: 90%;
+  margin: 0 auto;
+  border-width: 1px;
+  border-color: black;
+}
 /* MOBILE */
 @media screen and (max-width: 768px) {
   nav img {

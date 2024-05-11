@@ -1,0 +1,11 @@
+marta:
+  name: Marta La Ferla
+  bio: John è uno scrittore appassionato di tecnologia e innovazione.
+  letterboxd: https://letterboxd.com/martochka/
+  image: /assets/img/marta.jpeg
+
+alessandro:
+  name: Jane Smith
+  bio: Jane è una giornalista specializzata in cultura e arte.
+  twitter: janesmith
+  image: /assets/images/jane_smith.jpg

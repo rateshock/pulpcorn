@@ -1,5 +1,12 @@
 {% include header.html %}
 
 {{content}}
-
+{% if page.author %}
+<hr>
+<div class="autore">
+    <img src="{{ site.data.authors[page.author].image }}">
+    <p>A cura di</p>
+    <p><b>{{ site.data.authors[page.author].name }}</b></p>
+</div>
+{% endif %}
 {% include footer.html %}

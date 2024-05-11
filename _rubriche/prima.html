@@ -1,5 +1,6 @@
 ---
 layout: default
+author: marta
 ---
 <!DOCTYPE html>
 <html>
@@ -8,12 +9,6 @@ layout: default
     <title>Prima Rubrica</title>
 </head>
 <style>
-  .snap-container{
-    height: 100%;
-    margin: 0;
-    scroll-snap-type: y mandatory; /* Attiva lo scroll snap verticale */
-    overflow-y: scroll; /* Assicura che lo scroll sia sempre attivo */
-}
 
 section {
     height: 100vh;
@@ -58,8 +53,64 @@ section {
     text-align: center;
 }
 
-</style>
+.img-parallax-sfondo {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
 
+.img-parallax-sfondo h2 {
+    position: sticky;
+    top: 0; /* Regola questa posizione per posizionare l'h2 come desiderato */
+    color: white;
+    margin: 0;
+    font-size: 15vh;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px; /* Spaziatura interna per estetica */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1; /* Completamente visibile all'inizio */
+}
+
+@media screen and (max-width:700px) {
+    .img-apertura-sfondo {
+    position: relative;
+    overflow: hidden;
+    height: 300px; /* Altezza fissa per vedere l'effetto parallasse */
+}
+
+    
+}
+</style>
+<script>
+window.addEventListener('scroll', function() {
+  document.querySelectorAll('.img-parallax-sfondo').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const h2 = section.querySelector('h2');
+
+    if (rect.top <= 0) {
+      // Calcola quanto spostare l'h2 verso il basso
+      let offset = Math.min(rect.height, -rect.top);
+      h2.style.transform = `translateY(${offset}px)`;
+      
+      // Gestisce l'opacità per far sparire l'h2 quando si avvicina al bordo inferiore
+      if (-rect.top < rect.height) {
+        h2.style.opacity = 1;
+      } else {
+        // Inizia a ridurre l'opacità quando h2 passa il limite inferiore del contenitore
+        let opacityFactor = Math.max(0, 1 - (-rect.top - rect.height) / 100);
+        h2.style.opacity = opacityFactor;
+      }
+    } else {
+      h2.style.transform = 'translateY(0px)';
+      h2.style.opacity = 1;
+    }
+  });
+});
+
+
+</script>
 <body>
     <div class="non-snap-container">
         <div class="img-apertura-sfondo">
@@ -74,67 +125,43 @@ section {
         </div>
     </div>
     <div class="snap-container">
-    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-01.jpeg');">
-        <h2 style="color: white;"><em>La ciénaga</em> (2001)</h2>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-01.jpeg');" onscroll="moveHeading(this)">
+        <h2 style="color: white;">La ciénaga (2001)</h2>
     </section>
     
     <section class="container-base">
-       <div class="titolo-film"> <h2 style="color: var(--pulpcorn);"><em>La ciénaga</em> (2001)</h2></div>
 
         <p>L'opera prima di Martel ci porta nelle Ande, dove una famiglia benestante sta trascorrendo le vacanze estive in una villa con piscina. La palude (ciénaga) del titolo non è solo letterale - la villa si trova proprio accanto alla riserva naturale argentina così denominata - ma rappresenta l'atmosfera che avvolge i protagonisti, impantanati in un susseguirsi di noia e indifferenza di moraviana memoria.</p>
         <p>Appare già chiara la cifra stilistica di Martel, che usa inquadrature lunghe e fisse per trasmettere l'immobilità delle situazioni e, nonostante la quasi totale assenza di intreccio, riesce a ipnotizzare lo spettatore e firma uno degli incipit più folgoranti e memorabili del cinema del nuovo millennio.</p>
     </section>
-    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-02.jpeg');">
-        <h2 style="color: white;"><em>La niña santa</em> (2004)</h2>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-02.jpeg');" onscroll="moveHeading(this)">
+        <h2 style="color: white;">La niña santa (2004)</h2>
     </section>
     
     <section class="container-base">
-        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">La niña santa (2001)</h2></div>
         <p>Anche nel secondo film della regista argentina, prodotto da<strong> Pedro Almodóvar</strong>, c'è una predilizione per gli spazi chiusi e le piscine, anche se in questo caso si tratta di quelli di un hotel di Salta (città natale di Martel) dove si svolge un congresso medico. La sedicenne Amalia, figlia della gestore dell'albergo e fervente cattolica, decide di voler salvare l'anima di un uomo di mezza età che si mostra attratto da lei.</p>
         <p>Lo sguardo enigmatico e ipnotico di Amalia si fissa sullo schermo in quest'opera fatta di silenzi, preghiere, sussurri e non-detti, senza che la tensione venga mai sciolta definitivamente. Uno sguardo originale e potente sull'adolescenza, sulla nascita del desiderio e sull'intimità dell'amicizia femminile.</p>
      </section>
 
-    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-03.jpeg');">
-        <h2 style="color: white;"><em>La mujer sin cabeza</em> (2008)</h2>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-03.jpeg');" onscroll="moveHeading(this)">
+        <h2 style="color: white;">La mujer sin cabeza (2008)</h2>
     </section>
     
     <section class="container-base">
-        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">La mujer sin cabeza (2008)</h2></div>
 
         <p>Considerato il capolavoro di Martel, è sicuramente il suo film di maggior successo. La lenta discesa nell'abisso della paranoia di una donna è il soggetto perfetto per lo stile, ormai affermato, della regista: le inquadrature fisse, i primissimi piani e le lunghe sequenze scandiscono l'incessante scorrere del tempo che provoca angoscia nella protagonista così come nello spettatore.</p>
         <p>A metà fra un thriller psicologico e una farsa da teatro dell'assurdo, il fascino di quest'opera risiede nella sceneggiatura criptica dal corrosivo sottotesto politico ma che si presta a diverse chiavi di lettura.</p>
   </section>
-    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-04.jpeg');">
-        <h2 style="color: white;"><em>Zama</em> (2016)</h2>
+    <section class="img-parallax-sfondo" style="background-image: url('{{site.baseurl}}/assets/img/lucrecia-martel-conoscere/lucrecia-04.jpeg');" onscroll="moveHeading(this)">
+        <h2 style="color: white;">Zama (2016)</h2>
     </section>
     
     <section class="container-base">
-        <div class="titolo-film"> <h2 style="color: var(--pulpcorn);">Zama (2016)</h2></div>
 
-        <p style="text-align: justify;">Presentato fuori concorso alla <strong>74. Mostra del Cinema di Venezia</strong> (dopo aver bypassato il concorso di Cannes per un conflitto d'interessi: il produttore Almodóvar era all'epoca presidente di giuria), è il film più ambizioso e visionario della regista argentina, che da sfogo al suo estro concedendosi parecchi virtuosismi, aiutata dai tre milioni di dollari di budget che si vedono tutti nella sountuosa messa in scena, con fotografia, costumi e scenografia che si addicono a una grande produzione.</p>
-        <p style="text-align: justify;">Tratto dall'omonimo romanzo storico di <strong>Antonio di Benedetto</strong>, il film narra la storia dell'ufficiale Don Diego de Zama, confinato in una colonia sudamericana per volere della Corona Spagnola e in attesa di promozione. L'ambientazione storica è solo un pretesto per trattare, ancora una volta, i temi cari a Martel: la noia della borghesia de <em>La ciènaga</em> qui diventa quella dei colonizzatori, e l'estenuante attesa di un cambiamento della propria situazione esistenziale qui spingerà il protagonista ad un'ultima disperata impresa.</p>
+        <p>Presentato fuori concorso alla <strong>74. Mostra del Cinema di Venezia</strong> (dopo aver bypassato il concorso di Cannes per un conflitto d'interessi: il produttore Almodóvar era all'epoca presidente di giuria), è il film più ambizioso e visionario della regista argentina, che da sfogo al suo estro concedendosi parecchi virtuosismi, aiutata dai tre milioni di dollari di budget che si vedono tutti nella sountuosa messa in scena, con fotografia, costumi e scenografia che si addicono a una grande produzione.</p>
+        <p>Tratto dall'omonimo romanzo storico di <strong>Antonio di Benedetto</strong>, il film narra la storia dell'ufficiale Don Diego de Zama, confinato in una colonia sudamericana per volere della Corona Spagnola e in attesa di promozione. L'ambientazione storica è solo un pretesto per trattare, ancora una volta, i temi cari a Martel: la noia della borghesia de La ciènaga qui diventa quella dei colonizzatori, e l'estenuante attesa di un cambiamento della propria situazione esistenziale qui spingerà il protagonista ad un'ultima disperata impresa.</p>
     </section>
 </div>  
 </body>
-<script>document.addEventListener('DOMContentLoaded', function() {
-    const snapContainer = document.querySelector('.snap-container');
-    let isSnapped = false; // Flag per evitare scatti multipli
-
-    window.addEventListener('scroll', () => {
-        const triggerHeight = window.innerHeight / 2; // Punto trigger a metà dello schermo
-        const snapRect = snapContainer.getBoundingClientRect();
-
-        // Controlla se la parte superiore del snap container è visibile e più della metà della pagina è stata superata
-        if (snapRect.top < triggerHeight && !isSnapped) {
-            isSnapped = true; // Imposta il flag per evitare scatti successivi
-            // Scrolla verso l'inizio del snap container
-            window.scrollTo({
-                top: snapContainer.offsetTop,
-                behavior: 'smooth' // Effetto di scroll morbido
-            });
-        }
-    });
-});
-</script>
 
 </html>
