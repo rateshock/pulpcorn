@@ -5,7 +5,8 @@ marta:
   image: /assets/img/marta.jpeg
 
 alessandro:
-  name: Jane Smith
+  name: Alessandro Gallo
   bio: Jane è una giornalista specializzata in cultura e arte.
-  twitter: janesmith
-  image: /assets/images/jane_smith.jpg
+  twitter: shockrate
+  letterboxd: https://letterboxd.com/shockrate
+  image: /assets/img/alessandro.jpeg

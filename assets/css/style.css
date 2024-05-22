@@ -94,6 +94,10 @@ html {
   scroll-behavior: smooth;
 }
 
+p{
+  text-align: justify;
+}
+
 strong {
   font-variation-settings: 'wght' 500;
 }
@@ -312,16 +316,41 @@ body, html, main {
   z-index: 10;
   text-align: center;
 }
+.review-content .text-image img {
+  max-width: 40%;
+  margin: 0 20px 10px 0;
+  border-radius: 8px;
+}
+
+.review-content .text-image.float-right img {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+
+.review-content .text-image.float-left img {
+  float: left;
+  margin: 0 20px 10px 0;
+}
+
 /* MOBILE */
 @media screen and (max-width: 768px) {
+  .review-content .text-image img {
+    max-width: 100%;
+    margin: 0 0 10px 0;
+    float: none;
+}
   nav img {
     height: 30px;
   }
-
+  .img-apertura-sfondo {
+    height: 250px;
+}
   .stretch {
     height: unset !important
   }
-
+  .img-apertura-sfondo h1, .img-apertura-sfondo h2 {
+    width: 100%;
+  }
   nav .menu a::after {
     display: none
   }

@@ -2,14 +2,31 @@
 layout: default
 title: Recensioni
 permalink: /recensioni
+style: recensioni-generico.css
 ---
-
-
 <main>
     <div class="container-base">
         <h1>Recensioni</h1>
 
-
+        <div class="recensioni-list">
+            {% assign sorted_recensioni = site.recensioni | sort: 'date' | reverse %}
+            {% for recensione in sorted_recensioni %}
+            {% assign author = site.data.authors[recensione.author] %}
+            <article class="recensione">
+                <a href="{{ recensione.url | relative_url }}"> <div class="recensione-img-container">
+                    <img src="{{ recensione.image-preview }}" alt="{{ recensione.title }} Preview" class="recensione-img">
+                </div></a>
+                <div class="recensione-content">
+                    <p class="recensione-date">{{ recensione.date | date: "%d/%m/%Y" }}</p>
+                    <h2><a href="{{ recensione.url | relative_url }}">{{ recensione.title }}</a></h2>
+                    <div class="recensione-author">
+                        <img src="{{ author.image }}" alt="{{ author.name }}" class="author-img">
+                        <p class="author-name">A cura di <span>{{ author.name }}</span></p>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
         
     </div>
 
