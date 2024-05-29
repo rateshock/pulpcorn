@@ -332,7 +332,11 @@ body, html, main {
   float: left;
   margin: 0 20px 10px 0;
 }
-
+blockquote {
+  text-align: center;
+  padding: 10%;
+  font-style: italic;
+}
 /* MOBILE */
 @media screen and (max-width: 768px) {
   .review-content .text-image img {
