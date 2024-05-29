@@ -14,3 +14,7 @@ alessandro:
 redazione:
   name: Redazione PulpCorn
   image: /assets/img/redazione.png
+
+chiara:
+  name: Chiara Nasoni
+  image: /assets/img/chiara.jpeg
